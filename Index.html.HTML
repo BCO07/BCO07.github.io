@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<HTML>
+<Head>
+<title> WHS -- Entertainment </title>
+<style>
+    
+    Body {
+        background-color: beige
+    }
+    h1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: beige
+        }
+    h2 {
+        position: absolute;
+        top: 48px;
+        left: 10;
+        color: beige
+    }
+     h3 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: beige
+    }
+    #Topbar {
+        position: absolute;
+        top: 0;
+        left: 0; 
+        width: 17%;
+        height: 51px;
+        background-color: navy          
+        }
+   
+    #Headingbar {
+        position: fixed;
+        top: 60px;
+        width: 16%;
+        height: 5%;
+        background-color: navy;
+    }
+    #CI {
+        position: fixed;
+        bottom: 30px;
+        right: 0px;
+        size: 75px
+    }
+
+
+}
+.carousel-container {
+  width: 400px;
+  height: 200px;
+  position: relative;
+  margin: 0 auto;
+ 
+}
+
+.navigation-buttons .previous {
+  position: absolute;
+  z-index: 10;
+  font-size: 25px;
+  top: 40%;
+  left: 415px;
+  font-weight: 700;
+}
+
+.navigation-buttons .next {
+  right: 400px;
+  position: absolute;
+  font-size: 25px;
+  z-index: 10;
+  top: 40.2%;
+}
+
+.navigation-buttons .nav-btn {
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.navigation .nav-btn:hover {
+  background: white;
+}
+
+.slider-carousel {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 450px;
+  margin-right: 450px;
+  position: relative;
+  transition: all 0.3s ease;
+  /*box-shadow: 10px 10px 10px; */
+
+}
+.slider-carousel img {
+  width: 100%;
+  transition: all 0.3s ease;
+  border:8px solid white;
+}
+
+.images {
+  position: absolute;
+  display: none;
+}
+
+.main {
+  display: block;
+}
+
+.image-text {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0.3);
+  height: 35px;
+}
+
+    #Bottombar {
+        position: absolute;
+        width: 100%;
+        height: 7%;
+        background-color: navy;
+        bottom: 0;
+        left: 0;
+    }
+    </style>
+    <style>
+    
+
+    </style>
+</Head>
+<Body> 
+<img src="WHSPic/ChemPH-removebg-preview.png" id="CI" />
+    
+    <div id='Topbar'>&nbsp;</div>
+    <div id='Bottombar'>&nbsp;</div>
+    <div id='Headingbar'>&nbsp;</div>
+    
+<div id="parent-container">
+
+<div class="navigation-buttons">
+  <div class="previous nav-btn"> ← </div>
+  <div class="next nav-btn"> → </div>
+</div>
+
+<div class="slider-carousel">
+  <div class="images main">
+    <img src="WHSPic/SpillageLeakage.png" alt="Spill" />
+    <div class="image-text">Spills and leakages</div>
+  </div>
+<div class="images">
+    <img src="WHSPic/StHaDi.png" alt="StHaDi" />
+    <div class="image-text">Incorrect storage, handling or disposal</div>
+  </div>
+  <div class="images">
+    <img src="WHSPic/Contemination.png" alt="Contam" />
+    <div class="image-text">Contamination</div>
+  </div> 
+  <div class="images">
+    <img src="WHSPic/Fume.png" alt="Exposure_Fume" />
+    <div class="image-text">Exposure to fumes</div>
+  </div>
+  <div class="images">
+    <img src="WHSPic/Dust.png" alt="Dust" />
+    <div class="image-text">Exposure to dust.
+    </div>
+  </div>
+   <div class="images">
+    <img src="WHSPic/Placeholder.png" alt="ExCo" />
+    <div class="image-text">Explosion or combustion </div>
+  </div>   
+  
+</div>
+
+</div>
+
+<script>
+
+    const previous = document.querySelector('.previous');
+    const next = document.querySelector('.next');
+    const images = document.querySelector('.slider-carousel').children;
+    const totalImages = images.length;
+    let currentIndex = 0;
+
+
+    previous.addEventListener('click', () => {
+      previousImage()
+    })
+
+    next.addEventListener('click', () => {
+      nextImage();
+    })
+    
+    
+    function nextImage(){
+
+      images[currentIndex].classList.remove('main');
+    	if(currentIndex == totalImages-1){
+        	currentIndex = 0;
+        }
+        else{
+        	currentIndex++;
+        }
+
+      images[currentIndex].classList.add('main');
+      
+    }
+    
+
+    function previousImage(){
+
+      images[currentIndex].classList.remove('main');
+    	if(currentIndex == 0){
+        	currentIndex = totalImages-1;
+        }
+        else{
+        	currentIndex--;
+        }
+    
+      images[currentIndex].classList.add('main');
+
+    }
+    
+</script>
+    
+<h1> WHS Guidelines</h1>
+<h2> Hazardous chemicals</h2>
+<h3> BCO © 2024</h3> 
+<div id="ChemPH> />
+                                               
+</Body>
+</HTML>
